@@ -333,12 +333,6 @@ def build_cross_brand_reasoning(
     reasoning_samples: List[Dict[str, Any]],
     metric_modes: List[str],
 ) -> str:
-    """
-    Similar brand의 샘플들을 바탕으로 LLM에게 scoring criteria를 reasoning하도록 요청.
-    Image + Caption을 함께 제시.
-    
-    Returns: LLM이 생성한 reasoning text
-    """
     if not reasoning_samples or not metric_modes:
         return ""
     
@@ -351,14 +345,12 @@ def build_cross_brand_reasoning(
         "You will analyze real ad performance data (caption + image) and infer scoring criteria."
     )
     
-    # Multimodal content 구성 (text + images)
     content: List[Dict[str, Any]] = []
     content.append({
         "type": "text",
         "text": f"I'm analyzing ads from Brand {similar_brand_id}. Below are real examples with actual performance metrics:\n\n"
     })
     
-    # 각 샘플을 caption + image로 제시
     for i, sample in enumerate(reasoning_samples, 1):
         row = sample["row"]
         tier = sample["performance_tier"]
@@ -366,13 +358,11 @@ def build_cross_brand_reasoning(
         metric_val = row.get(metric_col, "N/A")
         caption = row.get("caption", "No caption")
         
-        # 텍스트 설명
         content.append({
             "type": "text",
             "text": f"\n{i}. [{tier.upper()}] Ad {ad_id}: {metric_col}={metric_val:.4f}\nCaption: {caption}\n"
         })
         
-        # Image 추가
         mm_dict = row_to_mm_dict(row)
         if mm_dict.get("image_data_url"):
             content.append({
@@ -380,7 +370,6 @@ def build_cross_brand_reasoning(
                 "image_url": {"url": mm_dict["image_data_url"]}
             })
     
-    # 질문 추가
     content.append({
         "type": "text",
         "text": (
@@ -422,7 +411,6 @@ def select_features_for_brand(brand_id: str,
     fewshot_examples: List[Dict[str, Any]] = None,
 ) -> Dict[str, str]:
 
-    # Few-shot examples context 구성
     primary_metric = metric_modes[0]
     metric_col = METRIC_MODES.get(primary_metric, {}).get("col", "CTR")
     
@@ -937,7 +925,6 @@ def build_gpt_initial_system_msg(
     cross_brand_reasoning: str = None,
 ) -> str:
   
-    # 메트릭 정보 설명 (더 자세한 설명)
     metric_info = ""
     if metric_modes:
         metric_lines = []
