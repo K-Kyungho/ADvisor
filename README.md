@@ -1,15 +1,11 @@
-# ADvisor
-Official code repository for ADvisor.
+## ADvisor
 
----
-   
-### How to Run ADvisor (using similar brand information)
-* **Using Similar Brand Information**
-```bash
+✨ Official code repository for ADvisor.
+
+🚀 How to Run ADvisor
+
+🔗 Using Similar Brand Information
 python main.py --use_cross_brand_for_features
-```
 
-* **Using Only Target Brand Information**
-```bash
+🎯 Using Only Target Brand Information
 python main.py
-```
