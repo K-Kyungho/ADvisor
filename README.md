@@ -22,16 +22,16 @@ python main.py
 ## Data Format
 The expected directory structure is as follows:
 
+```bash
 data/
 ├── train_<brand_id>.csv
-
 ├── test_<brand_id>.csv
-
 ├── caption_dict.json
 ├── caption_embeddings.pkl
 ├── brand_embeddings.pkl
 └── brand_descriptions.json
-  
+```
+
 Each train_<brand_id>.csv and test_<brand_id>.csv file should contain advertisement-level information and target metric columns used for ranking.
 
 Example:
