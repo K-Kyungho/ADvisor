@@ -7,19 +7,19 @@ Pre-Deployment Advertisement Ranking under Data Scarcity via Context-Aware Crite
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 
 
-# 🚀 Quick Start
+## 🚀 Quick Start
 
-## 🔗 Using Similar Brand Information
+### 🔗 Using Similar Brand Information
 ```bash
 python main.py --use_cross_brand_for_features
 ```
 
-## 🎯 Using Only Target Brand Information
+### 🎯 Using Only Target Brand Information
 ```bash
 python main.py
 ```
 
-# Data Format
+## Data Format
 The expected directory structure is as follows:
 
 data/
