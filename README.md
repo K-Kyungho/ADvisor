@@ -4,7 +4,6 @@
 Pre-Deployment Advertisement Ranking under Data Scarcity via Context-Aware Criteria Generation with VLMs
 
 [![ACL Paper](https://img.shields.io/badge/ACL%20Paper-2026%20Industry%20Track-blue.svg)](https://aclanthology.org/2026.acl-industry.28/)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 
 
