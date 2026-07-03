@@ -30,7 +30,6 @@ data/
 ├── caption_embeddings.pkl
 ├── brand_embeddings.pkl
 └── brand_descriptions.json
-```
 
 Each train_<brand_id>.csv and test_<brand_id>.csv file should contain advertisement-level information and target metric columns used for ranking.
 
@@ -40,6 +39,6 @@ train_brandA.csv
 test_brandA.csv
 train_brandB.csv
 test_brandB.csv
-...
+```
 
 Optional files such as captions, caption embeddings, brand embeddings, and brand descriptions can be used to provide additional context for VLM-based criteria generation and scoring.
