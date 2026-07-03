@@ -24,7 +24,9 @@ The expected directory structure is as follows:
 
 data/
 ├── train_<brand_id>.csv
+
 ├── test_<brand_id>.csv
+
 ├── caption_dict.json
 ├── caption_embeddings.pkl
 ├── brand_embeddings.pkl
